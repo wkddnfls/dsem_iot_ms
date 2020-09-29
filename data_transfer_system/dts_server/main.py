@@ -3,7 +3,6 @@
 
 # In[ ]:
 
-
 import TcpServer
 import json
 server = TcpServer.TcpServer()
@@ -14,13 +13,12 @@ with open(file_path, "r") as fj:
     b = fd['DB_Host']
     c = fd['DB_User']
     d = fd['DB_password'] 
-    e = fd['DB_name']
-    f = fd['Specific_table_name']
-    g = fd['Device_Register_table_name']
-    print(a,b,c,d,e,f,g);
-server=TcpServer.TcpServer(a,b,c,d,e,f,g)
+    e = fd['DeviceRegistry_DB_name']
+    f = fd['Sensor_DB_name']
+    g = fd['Specific_table_name']
+    h = fd['Device_Register_table_name']
+server=TcpServer.TcpServer(a,b,c,d,e,f,g,h)
 server.DB_Con()
 
 while True:
     server.run()
-
